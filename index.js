@@ -2,6 +2,7 @@ const sketch = document.getElementById('grid')
 let range = document.getElementById('myRange')
 let size = 50
 const eraseBtn = document.getElementById('erase')
+const out = document.getElementById('output')
 
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
@@ -10,6 +11,7 @@ createGrid()
 
 
 function createGrid() {
+    out.textContent = 'Current Size: ' + size + 'x' + size
     for(let i = 0; i < size * size;i++) {
         sketch.style.gridTemplateRows = `repeat(${size}, 1fr)`
         sketch.style.gridTemplateColumns = `repeat(${size}, 1fr)`
